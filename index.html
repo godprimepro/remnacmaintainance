@@ -33,17 +33,81 @@ body{
     color: var(--text);
 }
 
+/* =======================
+   STICKY NAV (SWISS STYLE)
+======================= */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 80px;
+    background:rgba(7,13,23,0.72);
+    backdrop-filter: blur(16px);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.nav-left img{
+    height:28px;
+    width:auto;
+    display:block;
+}
+
+/* ICON BUTTONS */
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.icon-btn{
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.02);
+    backdrop-filter: blur(10px);
+    transition:all 0.2s ease;
+    text-decoration:none;
+}
+
+.icon-btn img{
+    width:16px;
+    height:16px;
+    object-fit:contain;
+    opacity:0.85;
+    transition:all 0.2s ease;
+}
+
+.icon-btn:hover{
+    border-color:rgba(108,168,255,0.45);
+    background:rgba(108,168,255,0.08);
+    transform:translateY(-1px);
+}
+
+.icon-btn:hover img{
+    opacity:1;
+}
+
 /* PAGE */
 .page{
     min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    padding:72px 80px;
+    padding:140px 80px 72px;
     position:relative;
 }
 
-/* BACKGROUND GLOW */
+/* BACKGROUND */
 .page::before{
     content:"";
     position:absolute;
@@ -54,7 +118,6 @@ body{
     pointer-events:none;
 }
 
-/* MAIN GRID */
 .container{
     display:grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -63,20 +126,7 @@ body{
     z-index:2;
 }
 
-/* LOGO */
-.logo{
-    margin-bottom:42px;
-    display:flex;
-    align-items:center;
-}
-
-.logo img{
-    height:40px;
-    width:auto;
-    display:block;
-}
-
-/* TEXT */
+/* TYPOGRAPHY */
 h1{
     font-size:64px;
     line-height:1.05;
@@ -130,7 +180,7 @@ h1{
     box-shadow:0 0 14px rgba(108,168,255,0.7);
 }
 
-/* RIGHT IMAGE */
+/* CARD */
 .right{
     display:flex;
     justify-content:center;
@@ -165,33 +215,15 @@ h1{
 
 .footer-right{
     display:flex;
-    gap:12px;
-    align-items:center;
-}
-
-/* ICON BUTTONS */
-.icon-link{
-    color:var(--soft);
-    text-decoration:none;
-    font-size:11px;
-    letter-spacing:1px;
-    padding:6px 10px;
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:8px;
-    transition:all 0.2s ease;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.icon-link:hover{
-    color:#fff;
-    border-color:rgba(108,168,255,0.45);
-    background:rgba(108,168,255,0.08);
+    gap:18px;
 }
 
 /* RESPONSIVE */
 @media(max-width:1024px){
+    .navbar{
+        padding:0 24px;
+    }
+
     .container{
         grid-template-columns:1fr;
         gap:48px;
@@ -202,7 +234,7 @@ h1{
     }
 
     .page{
-        padding:48px 24px;
+        padding:120px 24px 60px;
     }
 
     .footer{
@@ -216,15 +248,37 @@ h1{
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="RemnacLogo.png" alt="REMNAC INVESTMENTS AG">
+    </div>
+
+    <div class="nav-right">
+
+        <a href="mailto:info@remnacag.vc" class="icon-btn" title="Email">
+            <img src="email.png" alt="Email">
+        </a>
+
+        <a href="https://wa.link/jf8nbd" class="icon-btn" title="WhatsApp">
+            <img src="R.png" alt="WhatsApp">
+        </a>
+
+        <a href="https://www.linkedin.com/company/remnac-investments-ag" class="icon-btn" title="LinkedIn">
+            <img src="linkedin.png" alt="LinkedIn">
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ================= PAGE ================= -->
 <div class="page">
 
     <div class="container">
 
         <div class="left">
-
-            <div class="logo">
-                <img src="RemnacLogo.png" alt="REMNAC INVESTMENTS AG">
-            </div>
 
             <h1>
                 We Are Currently Carrying Out <span class="highlight">Website Maintenance</span>
@@ -259,17 +313,7 @@ h1{
 
     <div class="footer">
 
-        <div>© REMNAC INVESTMENTS AG</div>
-
-        <div class="footer-right">
-
-            <a href="mailto:info@remnacag.vc" class="icon-link">Email</a>
-
-            <a href="https://wa.link/jf8nbd" class="icon-link">WhatsApp</a>
-
-            <a href="https://www.linkedin.com/company/remnac-investments-ag" class="icon-link">LinkedIn</a>
-
-            <span>Switzerland</span>
+        <div>Copyright © 2026 by REMNAC INVESTMENTS AG</div>
 
         </div>
 
