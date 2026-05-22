@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>REMNAC INVESTMENTS AG — Maintenance</title>
 
-<!-- TEMP FONT (replace once exact remnac font is confirmed) -->
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="RemnacLogo.png">
+<link rel="apple-touch-icon" href="RemnacLogo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
     --bg:#070d17;
-    --panel:#0b1626;
     --text:#ffffff;
     --muted:#9aa8bd;
     --soft:#6f86a6;
@@ -31,7 +33,7 @@ body{
     color: var(--text);
 }
 
-/* MAIN LAYOUT */
+/* PAGE */
 .page{
     min-height:100vh;
     display:flex;
@@ -41,7 +43,7 @@ body{
     position:relative;
 }
 
-/* SUBTLE GRID / LIGHT EFFECT */
+/* BACKGROUND GLOW */
 .page::before{
     content:"";
     position:absolute;
@@ -52,7 +54,7 @@ body{
     pointer-events:none;
 }
 
-/* HEADER GRID */
+/* MAIN GRID */
 .container{
     display:grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -63,16 +65,18 @@ body{
 
 /* LOGO */
 .logo{
-    margin-bottom:32px;
+    margin-bottom:42px;
+    display:flex;
+    align-items:center;
 }
 
 .logo img{
-    height:141px; /* adjust to match remnac exact scale */
+    height:40px;
     width:auto;
     display:block;
 }
 
-/* TYPOGRAPHY */
+/* TEXT */
 h1{
     font-size:64px;
     line-height:1.05;
@@ -93,7 +97,7 @@ h1{
     margin-bottom:36px;
 }
 
-/* STATUS CARD */
+/* STATUS */
 .status-box{
     border:1px solid var(--border);
     background:rgba(255,255,255,0.02);
@@ -116,7 +120,6 @@ h1{
     align-items:center;
     gap:10px;
     font-size:15px;
-    color:var(--text);
 }
 
 .dot{
@@ -127,7 +130,7 @@ h1{
     box-shadow:0 0 14px rgba(108,168,255,0.7);
 }
 
-/* RIGHT VISUAL */
+/* RIGHT IMAGE */
 .right{
     display:flex;
     justify-content:center;
@@ -142,7 +145,6 @@ h1{
     padding:28px;
 }
 
-/* IMAGE */
 .card img{
     width:100%;
     border-radius:14px;
@@ -163,7 +165,29 @@ h1{
 
 .footer-right{
     display:flex;
-    gap:26px;
+    gap:12px;
+    align-items:center;
+}
+
+/* ICON BUTTONS */
+.icon-link{
+    color:var(--soft);
+    text-decoration:none;
+    font-size:11px;
+    letter-spacing:1px;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:8px;
+    transition:all 0.2s ease;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.icon-link:hover{
+    color:#fff;
+    border-color:rgba(108,168,255,0.45);
+    background:rgba(108,168,255,0.08);
 }
 
 /* RESPONSIVE */
@@ -183,7 +207,7 @@ h1{
 
     .footer{
         flex-direction:column;
-        gap:10px;
+        gap:14px;
         text-align:center;
     }
 }
@@ -198,16 +222,16 @@ h1{
 
         <div class="left">
 
-           <div class="logo">
-    <img src="RemnacLogo.png" alt="REMNAC INVESTMENTS AG">
-</div>
+            <div class="logo">
+                <img src="RemnacLogo.png" alt="REMNAC INVESTMENTS AG">
+            </div>
 
             <h1>
                 We Are Currently Carrying Out <span class="highlight">Website Maintenance</span>
             </h1>
 
             <p class="description">
-                The site will be restored shortly.
+                Our platform is undergoing scheduled infrastructure upgrades and system refinement as part of ongoing enhancements. The site will be restored shortly.
             </p>
 
             <div class="status-box">
@@ -237,7 +261,19 @@ h1{
 
         <div>© REMNAC INVESTMENTS AG</div>
 
-           </div>
+        <div class="footer-right">
+
+            <a href="mailto:info@remnacag.vc" class="icon-link">Email</a>
+
+            <a href="https://wa.link/jf8nbd" class="icon-link">WhatsApp</a>
+
+            <a href="https://www.linkedin.com/company/remnac-investments-ag" class="icon-link">LinkedIn</a>
+
+            <span>Switzerland</span>
+
+        </div>
+
+    </div>
 
 </div>
 
